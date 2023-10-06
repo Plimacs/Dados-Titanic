@@ -1,6 +1,6 @@
 import pandas as pd
 import statistics
-import matplotlib.pyplot as pizza
+import matplotlib.pyplot as plt
 
 # Carrega os arquivos CSV em um DataFrame.
 df = pd.read_csv('./Dados/dados4.csv')
@@ -39,9 +39,18 @@ shadow = True
 startangle = 50
 
 # Cria um gráfico de pizza.
-pizza.pie(sizes, explode=explode, labels=labels, colors=colors, autopct=autopct, shadow=shadow, startangle=startangle)
-pizza.axis('equal')
+plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct=autopct, shadow=shadow, startangle=startangle)
+plt.axis('equal')
 
-# Exibe o gráfico.
-pizza.title('Porcentagem de sobreviventes e não sobreviventes')
-pizza.show()
+# Exibe o gráfico de pizza.
+plt.title('Porcentagem de sobreviventes e não sobreviventes')
+plt.show()
+
+# Cria um gráfico de dispersão com dois valores.
+plt.scatter(df['age'], df['fare'], alpha=0.5)
+plt.xlabel('Idade')
+plt.ylabel('Tarifa')
+
+# Exibe o gráfico de Dispersão.
+plt.title('Gráfico de Dispersão de Idade vs Tarifa')
+plt.show()
