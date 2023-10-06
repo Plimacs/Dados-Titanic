@@ -16,7 +16,9 @@ print('A moda de idades é:', moda_idade)
 df['age'] = df['age'].round(0).astype(int)
 
 # Imprime a correção dos dados em formato TXT.
-df.to_csv('./Respostas/Resposta01.txt', index=False)
+f = open('./Respostas/Resposta01.txt', 'a')
+f.write(df.to_string())
+f.close()
 
 # Contando todos os Homens e Mulheres da coluna Sex.
 Quantidade_Homens = df['sex'].value_counts()['male']
